@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        h1 { text-align: center; }
+        p { text-align: center; }
+    </style>
+    <title>This is my Homework 3.</title>
+</head>
+<body>
+    <h1>Homework 3!</h1>
+    <form action="Commenting_Etiquette_Homework_9.html" method="post" class="Sign-Up">
+        <p>JavaScript. There are no challeges done.</p>
+        <div>
+            <fieldset>
+                <button type="submit" name="button2" id="button2" class="btn btn-primary">Look at this segue!</button>
+            </fieldset>
+        </div>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+        const output = document.getElementById("output");
+
+        // Function 1: What's your favorite_number?
+        function favoriteNumber() {
+            for (let i = 1; i <= 30; i++) {
+                if (i % 3 === 0) {
+                    output.innerHTML += `${i}. <br>`;
+                }
+            }
+        }
+
+        // Function 2: Do you have a second_favorite_number?
+        function secondFavoriteNumber() {
+            const number = Array.from({ length: 30 }, (_, i) => i + 1); // Creates an range of 1 to 30. The scope is local
+            number.forEach(sfn => {
+                if (sfn % 3 === 0) {
+                    output.innerHTML += `${sfn}. <br>`;
+                }
+            });
+        }
+
+        // Function 3: is that a jojo_function?
+        function jojoReference() {
+            const name = ["Bob", "Tyrell Wright", "Joseph Joestar"];
+            while (true) {
+                if (name.some(jf => jf.length > 5)) {
+                    name.forEach(jf => {
+                        if (jf.length > 5) {
+                            output.innerHTML += `Hello, My name is ${jf}. <br>`;
+                        }
+                    });
+                    break;
+                }
+            }
+        }
+
+        // Function 4: A inhuman reference, could call it a Ghoul, that takes place in Tokyo
+        function diffReference() {
+            const name_re = ["Ken", "Rize", "Yoshimura"];
+            do {
+                name_re.forEach(df => {
+                    if (df.length > 5) {
+                        output.innerHTML += `Hello, My name is ${df}. <br>`;
+                    }
+                });
+                break;
+            } while (true);
+        }
+
+        // Function 5: This just outputs fruit of the day, I don't have anything smart to say
+        function fruitOfTheDay() {
+            const fruits = ["Apple", "Banana", "Cherry", "Peach (my favorite)", "Plum", "Watermelon"];
+            const randomFruit = Math.floor(Math.random() * fruits.length);
+            output.innerHTML += `Fruit of the day: ${fruits[randomFruit]}! <br>`; //these brackets allow me to put multiple variables in one line of code.
+        }
+
+        /**
+        * Function 6: A fun-ction! 
+        * I'm trying my best to make this funny but I think we can split it *even* and say that was stupid.
+        */
+        function extraFUNction() {
+            const evenNum = []; //The scope is Local.
+            for (let n = 2; n <= 10; n += 2) {
+                evenNum.push(n);
+            }
+            output.innerHTML += `Even numbers: ${evenNum.join(", ")}<br>`;
+        }
+
+        // Calling all functions
+        favoriteNumber();
+        secondFavoriteNumber();
+        jojoReference();
+        diffReference();
+        fruitOfTheDay();
+        extraFUNction();
+    </script>
+</body>
+</html>
